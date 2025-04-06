@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="w-[100%] overflow-x-hidden overflow-y-scroll box-border">
+      <body className="overflow-x-hidden overflow-y-scroll box-border">
         <MantineProvider theme={{}}>{children}</MantineProvider>
       </body>
     </html>
