@@ -90,7 +90,13 @@ export default function Navbar() {
            key={item.id} href={`/#${item.key}`} c="#FCFCFD" py="16px" px="16px" td="none">
           {item.tab}
       </Anchor>
+
+      
       ))}
+       <Anchor onClick={()=> router.push("/Contact/#Contact")} 
+            c="#FCFCFD" py="16px" px="16px" td="none">
+          Contact Us
+      </Anchor>
         </Box>
       </Box>
     </div>
