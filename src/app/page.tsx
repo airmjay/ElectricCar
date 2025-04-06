@@ -9,7 +9,7 @@ import HowWeWork from './Pages/_libs/HowWeHelp/page';
 import OurBlog from './Pages/_libs/OurBlog/page';
 import OurMobile from './Pages/_libs/OurMobile/page';
 import WhoWeAre from './Pages/_libs/WhoWeAre/page';
-
+   
 export default function Home() {
   return (
     <Box w='100%' className='overflow-x-hidden'>
