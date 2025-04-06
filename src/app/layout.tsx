@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="overflow-x-hidden overflow-y-scroll box-border">
+      <body style={{overflowX : 'hidden',width: '100%'}} className="overflow-x-hidden overflow-y-scroll box-border">
         <MantineProvider theme={{}}>{children}</MantineProvider>
       </body>
     </html>
