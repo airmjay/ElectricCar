@@ -1,6 +1,13 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
+export const metadata = {
+  title: 'EVCharging', // Default title
+  description: 'Code with nextjs my airmjay',
+  icons: {
+    icon: '/logo.png', // Path to your PNG in /public
+  },
+};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
