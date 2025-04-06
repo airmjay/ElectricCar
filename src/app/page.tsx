@@ -1,4 +1,5 @@
 "use Client"
+import { Box } from '@mantine/core';
 import AboutUs from './Pages/_libs/AboutUs/page';
 import Banner from './Pages/_libs/Banner/page'
 import Faqs from './Pages/_libs/Faqs/Page';
@@ -11,7 +12,7 @@ import WhoWeAre from './Pages/_libs/WhoWeAre/page';
 
 export default function Home() {
   return (
-    <>
+    <Box w='100%' className='overflow-x-hidden'>
       <Banner/>
       <WhoWeAre/>
       <HowItWorks/>
@@ -21,6 +22,6 @@ export default function Home() {
       <OurBlog/>
       <OurMobile/>
       <Footer/>
-    </>
+    </Box>
   );
 }
