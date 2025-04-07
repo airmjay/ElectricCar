@@ -23,7 +23,7 @@ export default function Faqs() {
         <GridCol span={{ base: 12, md: 7 }}>
           <Box>
             <Heading otherProps={{mt: 'lg'}} text={contentLayout[0].heading as string}/>
-           <BigHeading text={contentLayout[1].content as string} />
+           <BigHeading otherProps={{mt: '5px'}} text={contentLayout[1].content as string} />
           </Box>
           <Box mt={'48px'}>
           {FAQList.map((item) => (

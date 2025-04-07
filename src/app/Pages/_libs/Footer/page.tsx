@@ -11,7 +11,10 @@ import {
 import { Box, Grid, GridCol, Text } from "@mantine/core";
 import Image from "next/image";
 
+  
+
 export default function Footer() {
+  const currentYear: number = new Date().getFullYear();
   return (
     <div className="px-[20px] pt-[20px] md:px-[80px] md:pt-[80px] bg-[#101828] pb-[40px]">
       <Box c={"white"}>
@@ -33,7 +36,7 @@ export default function Footer() {
             </span>
           </GridCol>
           <GridCol span={{ base: 12, md: 8 }}>
-            <div className="flex flex-col md:flex-row items-center text-center justify-center gap-[40px] md-gap-[68px]">
+            <div className="flex flex-col md:flex-row items-center text-center md:text-left md:justify-center gap-[40px] md-gap-[68px]">
               <Box>
                 <Text fz={"24px"} fw={"500"} lh={"32px"} lts={"0"}>
                   Company
@@ -90,7 +93,7 @@ export default function Footer() {
             />
           </div>
           <div className="flex mt-[28px] items-center justify-between text-gray-100">
-            <Text c={'#98A2B3'} fw={'400'}>Copyright Maxwell Co. © 2024</Text>
+            <Text c={'#98A2B3'} fw={'400'}>Copyright Maxwell Co. © {currentYear} </Text>
             <Text> Privacy & Policy</Text>
           </div>
         </Box>

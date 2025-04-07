@@ -1,5 +1,5 @@
 import { DownloadDown, Mark } from "@/app/assets/asset";
-import { Box, Button, Grid, GridCol, Text } from "@mantine/core";
+import { Box, Grid, GridCol, Text } from "@mantine/core";
 import Phone from "./phone";
 import {
   WhoWeAreRating,
@@ -12,6 +12,7 @@ import BigHeading from "@/app/components/Helper/BigHeading";
 import Map from "./Map";
 import ElectricVehicle from "./ElectricVehicle";
 import ThreeCard from "./ThreeCard";
+import ButtonComponent from "@/app/components/Helper/Button";
 
 
 const Rating: React.FC<WhoWeAreRating> = ({ rate, value }) => (
@@ -62,19 +63,7 @@ export default function WhoWeAre() {
                 ))}
               </div>
               <Box>
-                <Button
-                  display="flex"
-                  variant="filled"
-                  radius="md"
-                  mt="48px"
-                  h="48px"
-                  w="183px"
-                >
-                  <DownloadDown />{" "}
-                  <span className="ml-2 font-[600] leading-[0px]">
-                    Download Now
-                  </span>
-                </Button>
+                <ButtonComponent text="Download Now" otherProps={{leftSection: <DownloadDown />}}/>
               </Box>
             </Box>
           </GridCol>
