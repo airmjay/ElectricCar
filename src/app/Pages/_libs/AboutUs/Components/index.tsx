@@ -10,6 +10,7 @@ export const AboutReviewCard: React.FC<AboutType> = ({image,content,name}) => (
      <GridCol span={{base: 12, md: 6}}>
      <Image className="w-['auto'] h-['auto'] md:w-[239px] md:h-[239px]" src={image} alt='Abouts us' width={10000} height={10000}/>
      </GridCol>
+     
      <GridCol span={{base: 12, md: 6}}>
      <Box>
      <Stars />
