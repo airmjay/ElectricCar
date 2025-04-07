@@ -2,9 +2,8 @@
 import { ArrowDown, ArrowUp } from "@/app/assets/asset";
 import ButtonComponent from "@/app/components/Helper/Button";
 import { CardContentType, CardContent, image } from "@/app/constants/Blogs/Cards";
-import { Box, Card, Flex, SimpleGrid, Text } from "@mantine/core";
+import { Anchor, Box, Card, Flex, SimpleGrid, Text } from "@mantine/core";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 const CardComponent: React.FC<CardContentType> = ({
   image,
   title,
@@ -21,9 +20,9 @@ const CardComponent: React.FC<CardContentType> = ({
     </Text>
     <Box>
       <Flex gap={"10px"} justify="space-between" mt="md" mb="xs">
-        <Text fw={500} fz={"24px"} lh={"32px"}>
+        <Anchor href="/evcharging" td={'none'} c={'#101828'} className="" fw={500} fz={"24px"} lh={"30px"}>
           {title}
-        </Text>
+        </Anchor>
         <ArrowUp />
       </Flex>
       <Text size="sm" c="dimmed">
@@ -52,7 +51,6 @@ const CardComponent: React.FC<CardContentType> = ({
   </Card>
 );
 export default function Cards() {
-  const router = useRouter();
   return (
     <Box pos={'relative'} >
       <Image
@@ -62,7 +60,7 @@ export default function Cards() {
       width={1400}
       height={800}
        />
-       <Box className="cursor-pointer" onClick={()=> router.push('/EVcharging') } mx={{ base: "20px", md: "80px" }} py={{base:"20px",md:"70px"}}>
+       <Box className="cursor-pointer" mx={{ base: "20px", md: "80px" }} py={{base:"20px",md:"70px"}}>
       <SimpleGrid cols={{base: 1,md:3}} spacing="sm" verticalSpacing="40px">
         {CardContent.map((item) => (
           <CardComponent key={item.id} {...item} />

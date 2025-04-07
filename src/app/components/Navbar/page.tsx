@@ -51,7 +51,7 @@ export default function Navbar() {
         </Box>
         {NavList()}
         <Button
-          onClick={() => router.push("/Contact/#Contact")}
+          onClick={() => router.push("/contact/#Contact")}
           display={{ base: "none", md: "block" }}
           variant="filled"
           radius="md"
@@ -93,7 +93,7 @@ export default function Navbar() {
 
       
       ))}
-       <Anchor onClick={()=> router.push("/Contact/#Contact")} 
+       <Anchor onClick={()=> router.push("/contact/#Contact")} 
             c="#FCFCFD" py="16px" px="16px" td="none">
           Contact Us
       </Anchor>
