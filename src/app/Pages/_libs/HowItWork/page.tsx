@@ -8,7 +8,7 @@ import React from "react";
 import { GridPhone,GridCharge} from "./Components/index";
 export default function HowItWorks() {
   return (
-    <Box id='HowItWork' c='white' mx={{base: '20px',md:"80px"}} mt="80px" bg={'#011929'} px={{base: '20px',md:'80px'}} pt={{base: '20px',md:'80px'}} pb='40px'>
+    <Box id='HowItWork' c='white' mt="80px" bg={'#011929'} px={{base: '20px',md:'80px'}} pt={{base: '20px',md:'80px'}} pb='40px'>
       <Grid gutter="md">
         <GridCol span={{ base: 12, md: 5 }}>
           <Grid gutter="md">
@@ -48,7 +48,7 @@ export default function HowItWorks() {
          </Text>
         </GridCol>
       </Grid>
-      <SimpleGrid cols={{base: 1,md:3}} spacing={'sm'} verticalSpacing={'lg'} mt={{base: '24px',md: '64px'}}>
+      <SimpleGrid cols={{base: 1,md:3}} spacing={'24px'} verticalSpacing={'lg'} mt={{base: '24px',md: '64px'}}>
           {ChargeCard.map((item)=> (
             <GridCharge key={item.id} {...item} />
           ))}

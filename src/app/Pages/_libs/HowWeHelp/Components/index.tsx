@@ -9,13 +9,16 @@ export const GridCard: React.FC<GridType> = ({ id, image, header, title, list })
   {id % 2 === 1 ? 
     <Grid gutter={"20px"} mt="42px">
       <GridCol span={{ base: 12, md: 6 }}>
-        <Image
-          src={image}
-          alt="frame"
-          width={10000}
-          height={10000}
-          style={{ width: "577px", height: "384px" }}
-        />
+      <Image
+      src={image}
+      alt="frame"
+      width={577}  // Base width
+      height={384} // Base height
+      style={{ 
+        width: '100%', 
+        height: 'auto' 
+      }}
+    />
       </GridCol>
       <GridCol span={{ base: 12, md: 6 }}>
         <Text fz="48px" fw="700" lh="48px" lts="0px">
@@ -57,7 +60,7 @@ export const GridCard: React.FC<GridType> = ({ id, image, header, title, list })
         alt="frame"
         width={10000}
         height={10000}
-        style={{ width: "577px", height: "384px" }}
+        
       />
     </GridCol>    
   </Grid> }
