@@ -8,17 +8,20 @@ import Image from "next/image";
 
 const OurBlogCard: React.FC<OurBlogType> = ({ image, heading, content }) => (
   <Box w={"100%"}>
+    <Box h={{base: '220px',md: 'auto'}}>
     <Image
       style={{
         width: "100%",
-        height: "auto",
+        height: "100%",
       }}
       src={image}
       alt="our blog 1"
-      width={10000}
-      height={10000}
+      width={1200}
+      height={800}
       className="rounded-xl"
+      objectFit="cover"
     />
+    </Box>
     <Box w={"100%"} mt={"24px"}>
       <Text fz={"24px"} fw={"500"} lh={"32px"} lts={"0"}>
         {heading}

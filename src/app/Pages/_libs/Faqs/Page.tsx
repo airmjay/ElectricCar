@@ -35,13 +35,14 @@ export default function Faqs() {
               /> )) }
           </Box>
         </GridCol>
-        <GridCol span={{ base: 12, md: 5 }}>
+        <GridCol h={{base: '400px', md: 'auto'}} span={{ base: 12, md: 5 }}>
           <Image
             src={images.carCharger.src}
-            width={10000}
+            width={1200}
             alt="charger"
-            height={10000}
-            style={{ width: "100%" }}
+            height={100}
+            style={{height:'100%'}}
+            objectFit="cover"
           />
         </GridCol>
       </Grid>

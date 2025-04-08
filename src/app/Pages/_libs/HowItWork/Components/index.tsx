@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export const GridPhone: React.FC<PhoneType> = ({ image, title, content }) => (
   <GridCol span={{ base: 12, md: 6 }}>
-    <Box bg="#1D2939" className="rounded-lg">
-      <Image src={image} alt="iphone" width={10000} height={1000} />
+    <Box h={{base: '300px', md: 'auto'}}bg="#1D2939" className="rounded-lg">
+      <Image style={{height:'100%'}} src={image} alt="iphone" width={1200} height={800} objectFit="cover"/>
     </Box>
     <Box mt="24px">
       <Text fw="500" lh="24px">

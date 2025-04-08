@@ -9,34 +9,34 @@ export default function OurMobile() {
     <Box px={{base:'10px' ,md:"80px"}} py="40px">
       <div className="bg-[#D7EEFF] relative rounded-[40px] pb-[30px]">
         <Image
-          className="absolute h-[100%] w-[70%]"
+          className="absolute h-[100%] w-[70%] z-0"
           src={images.Pattern.src}
-          width={10000}
-          height={10000}
+          width={1200}
+          height={800}
           alt="pattern"
         />
-        <Grid w={"100%"} gutter={"md"}>
+        <Grid w={"100%"} align="center" gutter={{base: 'sm', md: "md"}}>
           <GridCol
             px={"30px"}
             w={"100%"}
             pos={"relative"}
             span={{ base: 12, md: 7 }}
           >
-            <Box py="65px">
+            <Box py={{base: '10px', md: "65px"}}>
               <Heading text='Our Mobile App'/>
-              <BigHeading className="z-88" otherProps={{ta: 'left', mt: '10px'}} text="Now is the Perfect Moment to Embrace a Positive Transformation!" />
+              <BigHeading className="z-99" otherProps={{ta: 'left', mt: '10px'}} text="Now is the Perfect Moment to Embrace a Positive Transformation!" />
             </Box>
           </GridCol>
           <GridCol span={{ base: 12, md: 5 }}>
             <Box>
-              <Box>
+              <Box display={'flex'} className="justify-center" h={{base: '250px',md : 'auto'}}>
                 <Image
                   className="z-88"
                   src={images.iphone15.src}
                   alt="iphone 15"
-                  width={10000}
-                  height={10000}
-                  style={{ width: "80%", height: "217px" }}
+                  width={1200}
+                  height={800}
+                  style={{ width: "90%", height: "100%" }}
                   objectFit="cover"
                 />
               </Box>
