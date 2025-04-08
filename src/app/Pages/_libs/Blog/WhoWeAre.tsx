@@ -5,7 +5,7 @@ import { CiSearch } from "react-icons/ci";
 
 export default function WhoWeAre() {
   return (
-    <Box m={{base: '20px',md:"80px"}} ta={"center"}>
+    <Box mx={{base: '20px',md:"80px"}} my={'80px'} ta={"center"}>
       <Text
         display={"inline-block"}
         className="rounded-full"
