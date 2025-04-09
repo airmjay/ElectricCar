@@ -1,0 +1,18 @@
+.swiper-container {
+    position: relative;
+    padding: 20px 0;
+    display: block;
+  }
+  
+  /* Style for Previous button */
+ 
+  
+  
+  /* Style for Next button */
+  
+  
+  /* Optional: Hide default Swiper buttons if they still appear */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
