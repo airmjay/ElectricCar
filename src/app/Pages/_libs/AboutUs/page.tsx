@@ -27,7 +27,7 @@ export default function AboutUs() {
     <>
     <div className="swiper-container">
     <div className="px-[20px] md:px-[80px]  py-[20px] md:py-[80px] bg-[#011929] text-[white] mt-[20px] md:mt-[80px]">
-      <Grid mb={'40px'}>
+      <Grid mb={{base: '20px', md : '40px'}}>
         <GridCol span={{base: 12, md : 6}}>
                 
           <Heading text={contentType[0].header as string}/>      
