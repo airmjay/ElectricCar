@@ -42,12 +42,12 @@ export default function OurBlog() {
       <div className="swiper-container">
         <div className="flex gap-[10px] flex-wrap md:flex-nowrap mt-2 md:mt-0 justify-between items-center">
           <BigHeading text={contentLayout[1].content as string} />
-          <Text className="flex gap-[10px] items-center">
+          <Text className="flex gap-[10px] items-center" mt={{base:'20px', md: 'auto'}}>
             <button className="custom-prev-button-1 cursor-pointer"><LeftArrowShift /></button>
             <button className="custom-next-button-1 cursor-pointer"><RightArrowShift /></button>
           </Text>
         </div>
-        <Box mt='80px'>
+        <Box mt={{base: '20px', md :'80px'}}>
         <Swiper
           modules={[Navigation]}
           slidesPerView={isSmallScreen ? 1 : isMediumScreen ? 2 : 3} // Adjusted for better display
