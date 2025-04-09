@@ -11,10 +11,18 @@ import 'swiper/css/navigation'; // Required for navigation
 import './SwiperStyles.css'
 import { Autoplay, Navigation } from 'swiper/modules'; // Import Navigation module
 import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 export default function AboutUs() {
-
+  const [isLastSlide, setIsLastSlide] = useState(false);
   const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
   const isMediumScreen = useMediaQuery({ query: '(min-width: 641px) and (max-width: 600px)' });
+  useEffect(()=> {
+    if(isLastSlide){
+      setTimeout(()=> {
+        setIsLastSlide(false);
+      }, 3000)
+    }
+  }, [isLastSlide])
   return (
     <>
     <div className="swiper-container">
@@ -31,8 +39,10 @@ export default function AboutUs() {
             </Text>
             <div className="mt-[24px] flex justify-end">
                <div className="flex gap-[24px]">
-                <span className="custom-prev-button cursor-pointer"><LeftArrowShift/></span>
-                <span className="custom-next-button cursor-pointer"><RightArrowShift/></span>
+                <button className="custom-prev-button cursor-pointer"><LeftArrowShift/></button>
+                <button className={`custom-next-button  ${
+                  isLastSlide  ? 'cursor-not-allowed' : 'cursor-pointer'
+                }`}><RightArrowShift/></button>
                </div>
             </div>
         </GridCol>
@@ -47,6 +57,7 @@ export default function AboutUs() {
         }}
         speed={400}
         autoplay={{delay : 3000}}
+        onReachEnd={() => setIsLastSlide(true)}
       >      
       {AboutReview.map((item)=> (
         <SwiperSlide key={item.id}> <AboutReviewCard {...item} /> </SwiperSlide>

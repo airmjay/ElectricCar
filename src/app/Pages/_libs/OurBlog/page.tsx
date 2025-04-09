@@ -12,6 +12,7 @@ import 'swiper/css/navigation';
 import './SwiperStyles.css';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 
 const OurBlogCard: React.FC<OurBlogType> = ({ image, heading, content }) => (
   <Box w="100%">
@@ -33,6 +34,14 @@ const OurBlogCard: React.FC<OurBlogType> = ({ image, heading, content }) => (
 );
 
 export default function OurBlog() {
+const [isLastSlide, setIsLastSlide] = useState(false);
+useEffect(()=> {
+  if(isLastSlide){
+    setTimeout(()=> {
+      setIsLastSlide(false);
+    }, 3000)
+  }
+}, [isLastSlide])
   const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
   const isMediumScreen = useMediaQuery({ query: '(min-width: 641px) and (max-width: 1000px)' }); // Fixed range
 
@@ -44,7 +53,9 @@ export default function OurBlog() {
           <BigHeading text={contentLayout[1].content as string} />
           <Text className="flex gap-[10px] items-center" mt={{base:'20px', md: 'auto'}}>
             <button className="custom-prev-button-1 cursor-pointer"><LeftArrowShift /></button>
-            <button className="custom-next-button-1 cursor-pointer"><RightArrowShift /></button>
+            <button className={`custom-next-button  ${
+                  isLastSlide  ? 'cursor-not-allowed' : 'cursor-pointer'
+                }`}><RightArrowShift/></button>
           </Text>
         </div>
         <Box mt={{base: '20px', md :'80px'}}>
@@ -58,7 +69,8 @@ export default function OurBlog() {
           }}
           initialSlide={1}
           speed={400}
-          autoplay={{ delay: 3000 }}
+          autoplay={{ delay: 1000 }}
+          onReachEnd={() => setIsLastSlide(true)}
         >
           {OurBlogsCard.map((item) => (
             <SwiperSlide key={item.id}><OurBlogCard {...item} /></SwiperSlide>
