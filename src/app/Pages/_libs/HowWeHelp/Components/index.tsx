@@ -21,9 +21,7 @@ export const GridCard: React.FC<GridType> = ({ id, image, header, title, list })
     />
       </GridCol>
       <GridCol span={{ base: 12, md: 6 }}>
-        <Text fz="48px" fw="700" lh="48px" lts="0px">
          <BigHeading text={header} />
-        </Text>
         <Text fz='24px' fw='600' lh={'32px'} mt={'24px'}>{title}</Text>
         <ul className="mt-[24px]">
           {list.map((list) => (
@@ -39,9 +37,7 @@ export const GridCard: React.FC<GridType> = ({ id, image, header, title, list })
     </Grid>
     : <Grid gutter={"20px"} mt="42px">
     <GridCol span={{ base: 12, md: 6 }}>
-      <Text fz="48px" fw="700" lh="48px" lts="0px">
       <BigHeading text={header} />
-      </Text>
       <Text fz='24px' fw='600' lh={'32px'} mt={'24px'}>{title}</Text>
       <ul className="mt-[24px]">
         {list.map((list) => (

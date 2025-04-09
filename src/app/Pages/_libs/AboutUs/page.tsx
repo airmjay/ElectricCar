@@ -12,6 +12,7 @@ import { Navigation } from 'swiper/modules'; // Import Navigation module
 import './SwiperStyles.css'
 import { useMediaQuery } from "react-responsive";
 export default function AboutUs() {
+
   const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
   const isMediumScreen = useMediaQuery({ query: '(min-width: 641px) and (max-width: 600px)' });
   return (
@@ -44,17 +45,10 @@ export default function AboutUs() {
           nextEl: '.custom-next-button', // Custom class for Next button
           prevEl: '.custom-prev-button', // Custom class for Previous button
         }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         speed={200}
-        autoHeight={true}
-        
-
-      >
-      
-      
+      >      
       {AboutReview.map((item)=> (
-        <SwiperSlide style={{width: '1000px'}} key={item.id}> <AboutReviewCard {...item} /> </SwiperSlide>
+        <SwiperSlide key={item.id}> <AboutReviewCard {...item} /> </SwiperSlide>
       ))}
       
       </Swiper> 
