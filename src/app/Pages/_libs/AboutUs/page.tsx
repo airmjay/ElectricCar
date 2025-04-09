@@ -8,8 +8,8 @@ import { AboutReviewCard } from './Components/';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation'; // Required for navigation
-import { Navigation } from 'swiper/modules'; // Import Navigation module
 import './SwiperStyles.css'
+import { Autoplay, Navigation } from 'swiper/modules'; // Import Navigation module
 import { useMediaQuery } from "react-responsive";
 export default function AboutUs() {
 
@@ -38,14 +38,15 @@ export default function AboutUs() {
         </GridCol>
       </Grid>
       <Swiper
-        modules={[Navigation]} // Include Navigation module
+        modules={[Navigation,Autoplay]} // Include Navigation module
       slidesPerView={isSmallScreen ? 1 : isMediumScreen ? 2 : 2}
       spaceBetween={isSmallScreen ? 10 : isMediumScreen ? 20 : 30}
         navigation={{
           nextEl: '.custom-next-button', // Custom class for Next button
           prevEl: '.custom-prev-button', // Custom class for Previous button
         }}
-        speed={200}
+        speed={400}
+        autoplay={{delay : 3000}}
       >      
       {AboutReview.map((item)=> (
         <SwiperSlide key={item.id}> <AboutReviewCard {...item} /> </SwiperSlide>

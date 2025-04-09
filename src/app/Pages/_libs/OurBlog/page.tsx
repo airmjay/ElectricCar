@@ -9,8 +9,8 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
 import './SwiperStyles.css';
+import { Autoplay, Navigation } from 'swiper/modules';
 import { useMediaQuery } from "react-responsive";
 
 const OurBlogCard: React.FC<OurBlogType> = ({ image, heading, content }) => (
@@ -49,14 +49,16 @@ export default function OurBlog() {
         </div>
         <Box mt={{base: '20px', md :'80px'}}>
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation,Autoplay]}
           slidesPerView={isSmallScreen ? 1 : isMediumScreen ? 2 : 3} // Adjusted for better display
           spaceBetween={isSmallScreen ? 10 : isMediumScreen ? 20 : 30}
           navigation={{
             nextEl: '.custom-next-button-1',
             prevEl: '.custom-prev-button-1',
           }}
-          speed={200}
+          initialSlide={1}
+          speed={400}
+          autoplay={{ delay: 3000 }}
         >
           {OurBlogsCard.map((item) => (
             <SwiperSlide key={item.id}><OurBlogCard {...item} /></SwiperSlide>
